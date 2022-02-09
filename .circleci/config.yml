@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  docker: circleci/docker@1.0.1
+  docker: circleci/docker@2.0.1
 
 jobs:
   build-docker-image:
@@ -17,7 +17,7 @@ jobs:
             image: cristiancmello/ubuntu
             tag: latest
             registry: $DOCKER_REGISTRY
-        - docker/push:
+       - docker/publish:
             image: cristiancmello/ubuntu
             tag: latest
             registry: $DOCKER_REGISTRY
