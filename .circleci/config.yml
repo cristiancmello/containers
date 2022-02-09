@@ -17,10 +17,10 @@ jobs:
             image: cristiancmello/ubuntu
             tag: latest
             registry: $DOCKER_REGISTRY
-        # - docker/push:
-        #     image: $DOCKER_IMAGE_NAME
-        #     tag: $__BUILD_VERSION
-        #     registry: $DOCKER_REGISTRY
+        - docker/publish:
+            image: cristiancmello/ubuntu
+            tag: latest
+            registry: $DOCKER_REGISTRY
 
 workflows:
   version: 2
