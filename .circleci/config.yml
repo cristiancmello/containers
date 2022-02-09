@@ -1,22 +1,22 @@
 version: 2.1
 
 jobs:
-  build-deploy:
+  ubuntu-2004-base:
     machine: true
     steps:
         - checkout
         - run: |
             echo "$DOCKERHUB_PASSWORD" | docker login --username $DOCKERHUB_LOGIN --password-stdin
         - run: |
-            docker build -t cristiancmello/ubuntu:{CIRCLE_BRANCH} ./{CIRCLE_BRANCH}
+            docker build -t cristiancmello/ubuntu:20.04-base ./ubuntu-20.04/base
         - run: |
-            docker push cristiancmello/ubuntu:{CIRCLE_BRANCH}
+            docker push cristiancmello/ubuntu:20.04-base
 
 workflows:
   version: 2
-  build-deploy-dockerimage:
+  ubuntu-2004-base-dockerimage:
     jobs:
-      - build-deploy:
+      - ubuntu-2004-base:
           context: docker-hub
           filters:
             branches:
