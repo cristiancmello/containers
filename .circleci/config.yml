@@ -8,8 +8,6 @@ jobs:
     machine:
         image: ubuntu-1604:202004-01
     steps:
-        - attach_workspace:
-            at: .
         - docker/check:
             docker-username: DOCKERHUB_LOGIN
             docker-password: DOCKERHUB_PASSWORD
@@ -18,7 +16,7 @@ jobs:
             command: |
               pwd
               ls -alh
-              
+
         - docker/build:
             dockerfile: ubuntu-20.04/base/Dockerfile
             image: $DOCKER_IMAGE_NAME
