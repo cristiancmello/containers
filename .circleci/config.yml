@@ -11,8 +11,8 @@ jobs:
         - attach_workspace:
             at: .
         - docker/check:
-            docker-username: $DOCKERHUB_LOGIN
-            docker-password: $DOCKERHUB_PASSWORD 
+            docker-username: DOCKERHUB_LOGIN
+            docker-password: DOCKERHUB_PASSWORD 
         # - docker/build:
         #     image: $DOCKER_IMAGE_NAME
         #     tag: $__BUILD_VERSION
