@@ -8,6 +8,7 @@ jobs:
     machine:
         image: ubuntu-1604:202004-01
     steps:
+        - checkout
         - docker/check:
             docker-username: DOCKERHUB_LOGIN
             docker-password: DOCKERHUB_PASSWORD
@@ -15,8 +16,6 @@ jobs:
             name: Run tests
             command: |
               pwd
-              ls -alh
-              cd ..
               ls -alh
 
         - docker/build:
