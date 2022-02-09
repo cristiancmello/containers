@@ -14,6 +14,7 @@ jobs:
             docker-username: DOCKERHUB_LOGIN
             docker-password: DOCKERHUB_PASSWORD 
         - docker/build:
+            dockerfile: ubuntu-20.04/base/Dockerfile
             image: $DOCKER_IMAGE_NAME
             tag: $__BUILD_VERSION
             registry: $DOCKER_REGISTRY
