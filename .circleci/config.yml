@@ -16,6 +16,8 @@ jobs:
             command: |
               pwd
               ls -alh
+              cd ..
+              ls -alh
 
         - docker/build:
             dockerfile: ubuntu-20.04/base/Dockerfile
