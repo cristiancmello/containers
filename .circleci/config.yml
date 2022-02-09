@@ -12,16 +12,10 @@ jobs:
         - docker/check:
             docker-username: DOCKERHUB_LOGIN
             docker-password: DOCKERHUB_PASSWORD
-        - run:
-            name: Run tests
-            command: |
-              pwd
-              ls -alh
-
         - docker/build:
             dockerfile: ubuntu-20.04/base/Dockerfile
-            image: $DOCKER_IMAGE_NAME
-            tag: $__BUILD_VERSION
+            image: cristiancmello/ubuntu
+            tag: latest
             registry: $DOCKER_REGISTRY
         # - docker/push:
         #     image: $DOCKER_IMAGE_NAME
