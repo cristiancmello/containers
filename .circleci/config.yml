@@ -8,7 +8,7 @@ jobs:
         - run: |
             echo "$DOCKERHUB_PASSWORD" | docker login --username $DOCKERHUB_LOGIN --password-stdin
         - run: |
-            docker build -t cristiancmello/ubuntu:latest ./ubuntu-20.04/base/Dockerfile
+            docker build -t cristiancmello/ubuntu:20.04-base ./ubuntu-20.04/base
 
 workflows:
   version: 2
