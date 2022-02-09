@@ -17,7 +17,7 @@ jobs:
             image: cristiancmello/ubuntu
             tag: latest
             registry: $DOCKER_REGISTRY
-        - docker/publish:
+        - docker/push:
             image: cristiancmello/ubuntu
             tag: latest
             registry: $DOCKER_REGISTRY
