@@ -21,4 +21,4 @@ workflows:
           filters:
             branches:
               only:
-                - ubuntu-20.04/base
+                - main
