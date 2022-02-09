@@ -10,17 +10,17 @@ jobs:
     steps:
         - checkout
         - docker/check:
-            docker-username: DOCKERHUB_LOGIN
-            docker-password: DOCKERHUB_PASSWORD
+          docker-username: DOCKERHUB_LOGIN
+          docker-password: DOCKERHUB_PASSWORD
         - docker/build:
-            dockerfile: ubuntu-20.04/base/Dockerfile
-            image: cristiancmello/ubuntu
-            tag: latest
-            registry: $DOCKER_REGISTRY
-       - docker/publish:
-            image: cristiancmello/ubuntu
-            tag: latest
-            registry: $DOCKER_REGISTRY
+          dockerfile: ubuntu-20.04/base/Dockerfile
+          image: cristiancmello/ubuntu
+          tag: latest
+          registry: $DOCKER_REGISTRY
+        - docker/publish:
+          image: cristiancmello/ubuntu
+          tag: latest
+          registry: $DOCKER_REGISTRY
 
 workflows:
   version: 2
